@@ -28,6 +28,7 @@ UNotes gives its best against complex scene hierarchies which make finding a spe
 # How to use it
 
 Once you acquired and imported the package, UNotes is really easy to use.
+Works with Unity 5.x, Unity 2017.x and Unity 2018.x.
 
 ## Attach a UNote to a GameObject
 
@@ -73,10 +74,13 @@ To export, go to _Window > UNotes > Export to TXT file_.
 
 All feedback is welcome, be it pure love, suggestions or criticism.
 Contributions are welcome, especially if you can take on one of the known issues. Please get in touch!
+See contacts below.
+
+# Contacts
 
 email: unitysupport@riccardostecca.net
 
-twitter: @riccardostecca
+Follow me on twitter: @riccardostecca
 
 # Desirable Improvements and Known Issues
 
