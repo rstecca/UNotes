@@ -72,8 +72,11 @@ To export, go to _Window > UNotes > Export to TXT file_.
 
 ## Collaborative Use
 
-While UNotes is not optimized for collaboration and team work, the main reason being that the database file must be binary, a few features were put in place with this in mind. Skipping the explanations of the internals, the only part that should concern you is the database file that UNotes uses to store all notes; this, by default, is named _UNotesDatabase.dat_. You can decide to target a new file, for example _RicUNotesDatabase.dat_, by changing it in _Window > UNotes > Options > Show Advanced_. This allows all team members to have a personal _dat_ file that can be tracked and, potentially, loaded by other team members. Just bear in mind that if two team members work on the same dat file it would be impossible to diff and do advanced merging due, again, to the binary nature od the database.
-Take extra care when changing the database filename as you might lose some unsaved notes.
+While UNotes is not optimized for collaboration and team work, the main reason being that the database file must be binary, a few features were put in place with this in mind. Skipping the explanations of the internals, the only part that should concern you is the database file that UNotes uses to store all notes; this, by default, is named _UNotesDatabase.dat_. You can decide to target a new file, for example _RicUNotesDatabase.dat_, by changing it in _Window > UNotes > Options > Show Advanced_. This allows all team members to have a personal _dat_ file that can be tracked and, potentially, loaded by other team members.
+
+Just bear in mind that if two team members work on the same dat file it would be impossible to diff and do advanced merging due, again, to the binary nature of the database.
+
+Finally, take extra care when changing the database filename as you might lose some unsaved notes.
 
 # Contributions and Feedback
 
