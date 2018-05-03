@@ -31,7 +31,7 @@ UNotes gives its best against complex scene hierarchies which make finding a spe
 
 UNotes 2.0.0 is available on the Unity's Asset Store for free at https://www.assetstore.unity3d.com/en/#!/content/51149
 
-## From his repository
+## From this repository
 
 After you've cloned or downloaded this repository, copy the whole UNotes folder contained in Assets (https://github.com/rstecca/UNotes/tree/master/UNotes/Assets) and paste it into your project's Assets folder.
 
