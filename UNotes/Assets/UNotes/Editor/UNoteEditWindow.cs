@@ -30,7 +30,7 @@ public class UNoteEditWindow : EditorWindow {
 //    UndoRedoItem undoredo;
 
     // Add menu item to show Unotes Window
-    [MenuItem("GameObject/UNotes/Open Note", false, 0)]
+    //[MenuItem("GameObject/UNotes/Open Note", false, 0)]
     public static void InitWithSelectedNote () {
         UNote note = UNotesHInventory.GetNote(Selection.activeInstanceID);
         currentNote = note;

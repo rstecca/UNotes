@@ -37,7 +37,8 @@ public static class UNotesHInventory {
 
     static void log(string message, bool __printStack = false)
     {
-        // Debug.Log("Hinventory: " + message); // Commented out for production
+        if(UNotesOptionsWindow.DEBUG_MODE)
+            Debug.Log("Hinventory: " + message); // Commented out for production
         if (__printStack)
             Debug.Log(System.Environment.StackTrace);
     }
@@ -179,10 +180,11 @@ public static class UNotesHInventory {
     /// <summary>
     /// Adds the note menu callback.
     /// </summary>
-    [MenuItem("GameObject/UNotes/Add Note", false, 0)]
+    [MenuItem("GameObject/UNotes/Add\\Edit Note", false, 0)]
     static void AddNoteMenuCallback()
     {
-        AddNote(Selection.activeInstanceID, new UNote("TEST NOTE " + Selection.activeInstanceID.ToString(), Selection.activeGameObject, UNotesOptions.instance));
+        // AddNote(Selection.activeInstanceID, new UNote("TEST NOTE " + Selection.activeInstanceID.ToString(), Selection.activeGameObject, UNotesOptions.instance));
+        AddNote(Selection.activeInstanceID, new UNote("New Note", Selection.activeGameObject, UNotesOptions.instance));
         UNoteEditWindow.InitWithSelectedNote();
     }
 
@@ -196,10 +198,10 @@ public static class UNotesHInventory {
         UNoteEditWindow.instance.Clear();
     }
 
-    [MenuItem("GameObject/UNotes/Print Hash", false, 0)]
+    // [MenuItem("GameObject/UNotes/Print Hash", false, 0)]
     public static void PrintInfo()
     {
-        log("" + GetObjectHash( Selection.activeObject.GetInstanceID()) );
+        log("" + GetObjectHash( Selection.activeTransform.gameObject.GetInstanceID()) );
     }
 
 //    [MenuItem("Window/UNotes/Export to TXT file/All notes")]
@@ -241,7 +243,7 @@ public static class UNotesHInventory {
     {
         if (collection.ContainsKey(_instanceID))
         {
-            Debug.LogError("Only one note per GameObject is allowed.");
+            Debug.LogWarning("Only one note per GameObject is allowed.");
         }
         else
         {

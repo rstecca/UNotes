@@ -49,6 +49,8 @@ public class UNotesWindow : EditorWindow {
     [MenuItem("Window/UNotes/Export to TXT file/Current Scene")]
 	public static void ExportToTXT()
 	{
+		if(instance == null)
+			Init();
 		string filename = "UNotes_" + System.DateTime.Now.ToString("ddMMMyyyy_hhmmss") + ".txt";
 		string path = EditorUtility.SaveFilePanel ("Unotes CSV Export", Application.dataPath, filename, "txt"); //Application.dataPath + "/" + filename;
         if (string.IsNullOrEmpty(path))

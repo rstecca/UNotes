@@ -43,6 +43,10 @@ public class UNotesTestingWindow : EditorWindow {
         {
             EditorApplication.RepaintHierarchyWindow();
         }
+        else if(GUILayout.Button("Print Note's Hash"))
+        {
+            UNotesHInventory.PrintInfo();
+        }
         //else if (GUILayout.Button("Reattach to GameObjects"))
         //{
 

@@ -38,12 +38,14 @@ public struct SerializableColor {
 /// </summary>
 [System.Serializable]
 public class UNotesOptions {
+
     public string fileName;
     public string filePath { get { return (Directory.GetParent(Application.dataPath).ToString() + "/" + fileName); } }
     public SerializableColor textColor;
     public SerializableColor bgColor;
     public bool bold;
     public int fontSize;
+    public bool debug_mode;
 
     static string _settingsFile = "";
     static string settingsFile {
@@ -91,7 +93,7 @@ public class UNotesOptions {
 
     public static void Load()
     {
-        Debug.Log("UNotes: Loading options to " + settingsFile);
+        Debug.Log("UNotes: Loading options from " + settingsFile);
 		if (!System.IO.File.Exists(settingsFile) || string.IsNullOrEmpty(settingsFile))
         {
 			// Default values
@@ -132,6 +134,8 @@ public class UNotesOptionsWindow : EditorWindow {
     UNotesOptions options;
     bool showAdvanced = false;
 
+    public static bool DEBUG_MODE = false;
+
     void OnEnable()
     {
         
@@ -150,7 +154,6 @@ public class UNotesOptionsWindow : EditorWindow {
         options = UNotesOptions.instance; // get the instance
 
         EditorStyles.label.wordWrap = true;
-        EditorGUILayout.LabelField("UNotes database file", EditorStyles.boldLabel);
 
         EditorGUI.BeginChangeCheck();
 
@@ -171,7 +174,7 @@ public class UNotesOptionsWindow : EditorWindow {
             EditorGUILayout.Space();
             Color guiCurrentColor = GUI.color;
             GUI.color = Color.red;
-            EditorGUILayout.LabelField("ADVANCED OPTIONS");
+            EditorGUILayout.LabelField("ADVANCED OPTIONS", EditorStyles.boldLabel);
             GUI.color = new Color(1f,.7f,0f);
             EditorGUILayout.LabelField("Backup your files!\nPlease note the following options can make you lose your work if not properly set.");
             GUI.color = guiCurrentColor;
@@ -189,6 +192,7 @@ public class UNotesOptionsWindow : EditorWindow {
             EditorGUILayout.BeginVertical();
             EditorStyles.label.wordWrap = true;
             EditorGUILayout.LabelField("TIP: When changing file name, save your project immediately to store all notes in the new database file.", EditorStyles.helpBox);
+            DEBUG_MODE = EditorGUILayout.Toggle("DEBUG MODE", DEBUG_MODE);
             EditorGUILayout.EndVertical();
         }
 
