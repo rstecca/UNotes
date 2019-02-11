@@ -88,6 +88,11 @@ Just bear in mind that if two team members work on the same dat file it would be
 
 Finally, take extra care when changing the database filename as you might lose some unsaved notes.
 
+# Debugging
+
+For debugging or testing purposes a Debug _Window can be activated at Window > UNotes > Debug Window_. This contains a few buttons to test crucial methods and print some verbose information from the database or the single notes.
+Note that for this to operate properly the _DEBUG MODE_ flag must be activated in the _Options Window_ under _Advanced Options_. 
+
 # Contributions and Feedback
 
 All feedback is welcome, be it pure love, suggestions or criticism.
